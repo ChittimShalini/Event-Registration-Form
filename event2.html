@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Event Registration</h1>
+        <form action="#" id="registrationForm">
+            <div class="input-label">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="input-label">
+                <label for="Email">Email:</label>
+                <input type="email" id="Email" name="Email" required>
+            </div>
+            <div class="input-label">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="input-label">
+                <label for="zipcode">Zipcode:</label>
+                <input type="text" id="zipcode" name="zipcode" required>
+            </div>
+            <div class="input-label">
+                <label for="contact">Contact:</label>
+                <input type="text" id="contact" name="contact" required>
+            </div>
+            <div class="centered">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+    </div>
+    <script>
+        const form = document.getElementById('registrationForm');
+        form.addEventListener('submit', function (event) {
+            let isValid = true;
+            const inputs = form.querySelectorAll('input[required]');
+            inputs.forEach(input => {
+                if (input.value.trim() === '') {
+                    isValid = false;
+                    showError(input, 'This field is required.');
+                }
+            });
+            const zipCode = form.querySelector('#zipcode');
+            if (!/^\d{5}$/.test(zipCode.value)) {
+                isValid = false;
+                showError(zipCode, 'Zip code should be exactly five digits.');
+            }
+            const email = form.querySelector('#Email');
+            if (!/^[a-zA-Z0-9._%+-]+@vitstudent\.ac\.in$/.test(email.value)) {
+            isValid = false;
+            showError(email, 'Only VIT student emails are allowed (e.g., yourname@vitstudent.ac.in).');
+            }
+            const password = form.querySelector('#password');
+            if (!isValidPassword(password.value)) {
+                isValid = false;
+                showError(password, 'Invalid password format.');
+            }
+            const contact = form.querySelector('#contact');
+            if (!/^\d{10}$/.test(contact.value)) {
+                isValid = false;
+                showError(contact, 'Mobile number should be 10 digits only.');
+            }
+             if (isValid) {
+            event.preventDefault();
+			alert('Registration successful');
+        }
+    });
+        function showError(input, message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error';
+            errorDiv.textContent = message;
+            input.parentNode.appendChild(errorDiv);
+        }
+        function isValidPassword(password) {
+            return /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[~!@#$%^*-_+=\[\]{}\/;:,.?])([A-Za-z\d~!@#$%^*-_+=\[\]{}\/;:,.?])*$/.test(password) && password.length >= 10 && password.length <= 100 && (new Set(password.split('')).size >= 5);
+        }
+    </script>
+</body>
+</html>

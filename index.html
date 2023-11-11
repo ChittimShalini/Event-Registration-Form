@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://images.pexels.com/photos/2747449/pexels-photo-2747449.jpeg?cs=srgb&dl=pexels-wolfgang-2747449.jpg&fm=jpg');
+            background-size: cover;
+            font-family: serif;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        h1 {
+            text-shadow: 2px 2px 4px #808080;
+            color: #fff;
+            font-size: 36px;
+        }
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+        }
+        #main-content {
+            text-align: center;
+            margin: 50px auto;
+            padding: 20px;
+            width: 80%;
+            border-radius: 10px;
+        }
+        #main-content img {
+            max-width: 70%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        #About-section {
+            background-color: #D3D3D3;
+            padding: 70px;
+            border-radius: 10px;
+            margin-top: 50px;
+            text-align: center;
+        }
+        #About-section h2 {
+            font-size: 30px;
+            text-shadow: 2px 2px 4px #808080;
+        }
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+        }
+        .about-image img {
+            max-width: 40%;
+            border-radius: 20px; 
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        .about-info {
+            text-align: left;
+            margin-top: 20px;
+        }
+		#Events-section{
+		background: rgba(225,255,255,0.9);
+		padding:20px;
+		margin-top:20px;
+		border-radius:10px;
+		border:2px solid #808080;
+		text-align:center;
+		color: #000000;
+		max-width:100%;
+		}
+		#Events-section {
+            background: url('https://images.pexels.com/photos/2747449/pexels-photo-2747449.jpeg?cs=srgb&dl=pexels-wolfgang-2747449.jpg&fm=jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        #Events-section h2 {
+            font-size: 36px;
+            text-shadow: 2px 2px 4px #808080;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        .Event-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .Event-item {
+            flex-basis: calc(33.33% - 20px);
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            border-radius: 10px; /* Added border-radius */
+        }
+    </style>
+</head>
+<body>
+<header>
+     <img src="https://www.knowafest.com/files/uploads/VIT%20logo_1-2017092503.jpg" alt="VIT Logo" style="position: absolute; top: 20px; left: 20px; max-width: 200px;">
+    <h1>Hey people, we heartly welcome you all!</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#About-section">About</a>
+        <a href="#Events-section">Events</a>
+    </nav>
+</header>
+<div id="main-content">
+    <img src="https://web.vit.ac.in/riviera/assets/img/background-overlay.png" alt="Event Image">
+</div>
+<div id="About-section">
+    <h2>About Us</h2>
+    <div class="about-content">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1563784462386-044fd95e9852?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ODl8ZW58MHx8MHx8fDA%3D&w=1000&q=80" alt="About Us Image">
+        </div>
+        <div class="about-info">
+            <p>Riviera is the Annual International Sports and Cultural Carnival of the Vellore Institute of Technology. 
+               The cultural festival has come a long way from its humble beginnings. It was
+               first introduced by the VIT Chancellor, Dr. G. Viswanathan. The first edition
+               of Riviera was in the year 2002 and was a success with a wide range of events
+               in all cultural spheres including music, dance, drama, literary events and 
+               more. Sports competitions were also part of this first festival. It saw a fair
+               amount of external participants which would grow in the years to come. It would
+               also be included on the list of the Top 10 Cultural Festivals in India. Started
+               to provide an alternative to the students from strenuous academics, it evolved
+               into something that would draw in crowds from most colleges and schools around
+               the region. The students were meant to gain basic organizational experience to
+               prepare them for similar situations in the real world. The festival grew by 
+               immense proportions, from having a budget of a few lakhs to a few crores, for 
+               instance, that the students had to keep raising the bar to meet the different
+               challenges with each new Riviera.</p>
+        </div>
+    </div>
+</div>
+<div id="Events-section">
+    <h2>Events are now open for registration - Register now!</h2>
+    <div class="Event-row">
+        <div class="Event-item">
+            <a href="event1.html">
+                <img src="https://vit.ac.in/system/files/poster%20copy.jpg" alt="Event 1">
+            </a>
+        </div>
+        <div class="Event-item">
+            <a href="event2.html">
+                <img src="https://vit.ac.in/system/files/EV-POWERTRAINS.jpg" alt="Event 2">
+            </a>
+        </div>
+        <div class="Event-item">
+            <a href="event3.html">
+                <img src="https://vit.ac.in/system/files/ICEISA-2024.jpg" alt="Event 3">
+            </a>
+        </div>
+    </div>
+    <div class="Event-row">
+        <div class="Event-item">
+            <a href="event4.html">
+                <img src="https://vit.ac.in/system/files/technoscape-2023.jpg" alt="Event 4">
+            </a>
+        </div>
+        <div class "Event-item">
+        <a href="event5.html">
+        <img src="https://vit.ac.in/system/files/NEle.jpg" alt="Event 5">
+        </a>
+        </div>
+        <div class="Event-item">
+        <a href="event6.html">
+        <img src="https://vit.ac.in/system/files/event_6.jpg" alt="Event 6">
+        </a>
+        </div>
+    </div>
+   <div class="Event-row">
+        <div class="Event-item">
+            <a href="event7.html">
+            <img src="https://vit.ac.in/system/files/Brochure-Final-National-Workshop_New-1.jpg" alt="Event 7">
+            </a>
+        </div>
+        <div class="Event-item">
+        <a href="event8.html">
+            <img src="https://vit.ac.in/system/files/EICHE-2024-1.jpg" alt="Event 8">
+        </a>
+        </div>
+        <div class="Event-item">
+        <a href="event9.html">
+            <img src="https://vit.ac.in/system/files/ipact2023-web.jpg" alt="Event 9">
+        </a>
+        </div>
+    </div>
+</div>
+<footer>
+    <div style="background: #D3D3D3; color: #000; padding: 20px; text-align: center;">
+        <p>&copy; 2023 Event Management. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
