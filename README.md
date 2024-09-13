@@ -1,2 +1,2 @@
 # Event-registration
-Basically, this repository includes all related files to design event registration form.
+This is a basic Event registration form.
